@@ -6,7 +6,7 @@
 
 ## 🎮 Play the Live Demo
 
-**👉 [Click here to play Dark Fortune](https://dinkotrendafilov.github.io/Slot-Machine-Dual-Jackpot/DEMO_dark_fortune_dual_jackpot.html)**
+**👉 [Click here to play Dark Fortune](https://dinkotrendafilov.github.io/Dark-Fortune-Dual-Jackpot/)**
 
 No installation needed. Just click and play!
 
