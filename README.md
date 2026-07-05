@@ -4,6 +4,14 @@
 
 ---
 
+## 🎮 Play the Live Demo
+
+**👉 [Click here to play Dark Fortune](https://dinkotrendafilov.github.io/Slot-Machine-Dual-Jackpot/DEMO_dark_fortune_dual_jackpot.html)**
+
+No installation needed. Just click and play in your browser!
+
+---
+
 ## 📌 Project Overview
 
 **Dark Fortune** is a custom-designed slot game built from scratch, combining combinatorial probability theory, progressive jackpot design, and survival analysis. The project includes a full Python mathematical model and a playable HTML5 demo.
@@ -15,8 +23,8 @@
 | Paylines | 20 |
 | Symbols | 30 unique |
 | Total combinations | 24,300,000 |
-| Target RTP | ~95% |
-| Achieved RTP (10M sims) | **96.76%** |
+| Target RTP | 95.001% |
+| Achieved RTP (10M sims) | **96.16%** |
 | Zero-win spins | **0.00%** |
 
 ---
@@ -37,13 +45,13 @@ This design ensures **zero-win spins are statistically impossible** — validate
 
 ## 💎 Dual Progressive Jackpot System
 
-Two independent jackpot pools are organically fed by 2-of-5 match lines:
+Two independent jackpot pools are organically fed by 1-match and 2-match lines:
 
 | Jackpot | Trigger Probability | RTP Contribution | Avg Payout |
 |---------|--------------------|--------------------|------------|
-| 🔵 Blue Jackpot | 1 in 300 | 3.00% | ~182 credits |
-| 💜 Grand Jackpot | 1 in 3,000 | 3.00% | ~1,825 credits |
-| **Combined** | — | **6.00%** | — |
+| 🔵 Blue Jackpot | 1 in 300 | 2.69% | ~161 credits |
+| 💜 Grand Jackpot | 1 in 3,000 | 2.86% | ~1,685 credits |
+| **Combined** | — | **5.55%** | — |
 
 **Key design principle:** Jackpot pools are funded by lines that would otherwise pay nothing — making the accumulation completely organic and tied to real game activity, not an artificial tax on the player's bet.
 
@@ -54,15 +62,15 @@ Both jackpots trigger **independently** on each spin, meaning both can theoretic
 ## 📊 RTP Distribution
 
 | Group | Probability | Coefficient | RTP Contribution |
-|-------|-------------|-------------|-----------------|
-| 1 match | 70.37% | 0.5× | 35.19% |
-| 2 match | 28.57% | 0.8× | 22.86% |
-| 3 match | 1.04% | 10× | 10.38% |
-| 4 match | 0.018% | 900× | 16.11% |
-| 5 match | 0.0001% | 50,000× | 6.17% |
-| 🔵 Blue Jackpot | — | progressive | 3.00% |
-| 💜 Grand Jackpot | — | progressive | 3.00% |
-| **Total** | | | **96.76%** |
+|-------|-------------|-------------|------------------|
+| 1 match | 70.37% | 0.5× | 38.79% |
+| 2 match | 28.57% | 0.8× | 25.20% |
+| 3 match | 1.04% | 10× | 11.45% |
+| 4 match | 0.018% | 900× | 17.76% |
+| 5 match | 0.0001% | 50,000× | 6.81% |
+| 🔵 Blue Jackpot | 1:300 | progressive | 2.69% |
+| 💜 Grand Jackpot | 1:3000 | progressive | 2.86% |
+| **Total** | | | **96.16%** |
 
 ---
 
@@ -73,15 +81,13 @@ All 24,300,000 possible 5-reel combinations are enumerated exhaustively (30^5). 
 
 ### Monte Carlo Validation
 - **10,000,000 spin simulation**
-- Theoretical vs simulated RTP deviation: **< 0.5%**
-- Blue Jackpot hits: 32,905 (avg every 304 spins, theoretical: 300) ✅
-- Grand Jackpot hits: 3,288 (avg every 3,041 spins, theoretical: 3,000) ✅
-- Both jackpots achieved exactly **3.00% RTP** ✅
+- Blue Jackpot hits: **33,354** (avg every 300 spins, theoretical: 300) ✅
+- Grand Jackpot hits: **3,395** (avg every 2,946 spins, theoretical: 3,000) ✅
 
 ### Bayesian Analysis — 5-of-5 Frequency
 - Theoretical: 1 in 40,500
-- Simulated: 1 in 38,910
-- 95% Credible Interval: [1 in 34,433 — 1 in 43,961]
+- Simulated: 1 in 40,984
+- 95% Credible Interval: [1 in 36,151 — 1 in 46,451]
 - ✅ Theoretical probability is within 95% CI
 
 ---
@@ -92,13 +98,13 @@ All 24,300,000 possible 5-reel combinations are enumerated exhaustively (30^5). 
 
 | Spins | Survival Rate | Bust Rate | Avg Balance | Avg Survivor Balance |
 |-------|--------------|-----------|-------------|---------------------|
-| 500 | **100.00%** | 0.00% | 9,543 | 9,543 |
-| 1,000 | **100.00%** | 0.00% | 9,295 | 9,295 |
-| 2,000 | **98.10%** | 1.90% | 9,444 | 9,626 |
-| 5,000 | 44.80% | 55.20% | 7,079 | 15,781 |
-| 10,000 | 14.40% | 85.60% | 5,912 | **40,962** |
+| 500 | **100.00%** | 0.00% | 9,705 | 9,705 |
+| 1,000 | **100.00%** | 0.00% | 9,359 | 9,359 |
+| 2,000 | **97.90%** | 2.10% | 8,792 | 8,980 |
+| 5,000 | 43.70% | 56.30% | 7,579 | 17,324 |
+| 10,000 | 13.10% | 86.90% | 6,150 | **46,841** |
 
-**Notable insight:** Players who survive 10,000 spins average **40,962 credits** — a **+310% return** on initial capital. This is the characteristic behavior of a progressive jackpot game: most players experience gradual decline, while jackpot winners achieve exceptional returns.
+**Notable insight:** Players who survive 10,000 spins average **46,841 credits** — a **+368% return** on initial capital. This is the characteristic behavior of a progressive jackpot game: most players experience gradual decline, while jackpot winners achieve exceptional returns.
 
 ---
 
@@ -106,10 +112,10 @@ All 24,300,000 possible 5-reel combinations are enumerated exhaustively (30^5). 
 
 | Metric | Value |
 |--------|-------|
-| Standard Deviation (σ) | 302.88 |
-| Arithmetic Mean (μ) | 19.35 |
-| Volatility Index (σ/μ) | **1,565%** |
-| Max single win | 150,067 credits |
+| Standard Deviation (σ) | 294.38 |
+| Arithmetic Mean (μ) | 19.23 |
+| Volatility Index (σ/μ) | **1,530%** |
+| Max single win | 150,058 credits |
 
 High volatility profile — typical and expected for a dual progressive jackpot design.
 
@@ -117,7 +123,7 @@ High volatility profile — typical and expected for a dual progressive jackpot 
 
 ## 🎮 Playable Demo
 
-The project includes a fully playable HTML5 demo (`dark_fortune_dual_jackpot.html`):
+The project includes a fully playable HTML5 demo:
 
 - **No installation required** — open directly in any modern browser
 - Animated reels with win line visualization
@@ -145,24 +151,19 @@ The project includes a fully playable HTML5 demo (`dark_fortune_dual_jackpot.htm
 ---
 
 ## 📁 Project Structure
-
-```
 dark-fortune-dual-jackpot/
-├── README.md
-├── SDD.md
-├── dark_fortune_2_jackpots.py       # Full Python mathematical model
-├── dark_fortune_2_jackpots.ipynb    # Jupyter notebook version
-├── dark_fortune_dual_jackpot.html   # Playable HTML5 demo
-└── results/
-    └── simulation_10M_results.txt   # Full simulation output
-```
+│
+├── README.md # This file
+├── dark_fortune_2_jackpots.ipynb # Full Python model
+├── DEMO_dark_fortune_dual_jackpot.html # Playable HTML5 demo
+└── Software_Design_Document.ipynb # Full SDD
+
 
 ---
 
 ## 👤 Author
 
 **Dinko Trendafilov**
-- ML Certificate — SoftUni (Grade: 5.84/6.00)
 - GitHub: [DinkoTrendafilov](https://github.com/DinkoTrendafilov)
 
 ---
