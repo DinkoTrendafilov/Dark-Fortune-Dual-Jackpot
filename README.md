@@ -8,7 +8,7 @@
 
 **👉 [Click here to play Dark Fortune](https://dinkotrendafilov.github.io/Slot-Machine-Dual-Jackpot/DEMO_dark_fortune_dual_jackpot.html)**
 
-No installation needed. Just click and play in your browser!
+No installation needed. Just click and play!
 
 ---
 
